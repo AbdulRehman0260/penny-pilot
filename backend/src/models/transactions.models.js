@@ -39,9 +39,6 @@ const transactionSchema = new mongoose.Schema(
       frequency: {
         type: String,
         enum: ["daily", "weekly", "monthly", "yearly"],
-        required: function () {
-          return this.recurring.isRecurring;
-        },
       },
     },
   },

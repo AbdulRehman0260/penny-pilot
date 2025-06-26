@@ -1,5 +1,6 @@
 import express from "express";
 import authRoutes from "./routes/auth.routes.js";
+import transactionRoutes from "./routes/transactions.routes.js";
 import dotenv from "dotenv";
 import { connect } from "mongoose";
 import { connectDB } from "./lib/db.js";
@@ -14,6 +15,7 @@ app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 app.use(cookieParser()); // Add this line for cookie parsing
 
 app.use("/api/auth", authRoutes);
+app.use("/api/transaction", transactionRoutes);
 
 const PORT = process.env.PORT;
 
