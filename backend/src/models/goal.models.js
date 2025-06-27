@@ -31,42 +31,11 @@ const goalSchema = new mongoose.Schema(
       type: Date,
       required: true,
     },
-    category: {
-      type: String,
-      enum: [
-        "emergency_fund",
-        "vacation",
-        "car",
-        "house",
-        "education",
-        "retirement",
-        "other",
-      ],
-      default: "other",
-    },
-    status: {
-      type: String,
-      enum: ["active", "completed", "paused", "cancelled"],
-      default: "active",
-    },
     priority: {
       type: String,
       enum: ["low", "medium", "high"],
       default: "medium",
     },
-    contributions: [
-      {
-        amount: {
-          type: Number,
-          required: true,
-        },
-        date: {
-          type: Date,
-          default: Date.now,
-        },
-        note: String,
-      },
-    ],
   },
   {
     timestamps: true,

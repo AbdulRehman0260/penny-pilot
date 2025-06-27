@@ -13,26 +13,13 @@ const wishlistSchema = new mongoose.Schema(
       required: true,
       maxlength: 100,
     },
-    description: {
-      type: String,
-      maxlength: 500,
-    },
-    estimatedPrice: {
+    Price: {
       type: Number,
       required: true,
       min: 0,
     },
     category: {
       type: String,
-      enum: [
-        "electronics",
-        "clothing",
-        "books",
-        "travel",
-        "home",
-        "sports",
-        "other",
-      ],
       default: "other",
     },
     priority: {
@@ -40,24 +27,9 @@ const wishlistSchema = new mongoose.Schema(
       enum: ["low", "medium", "high"],
       default: "medium",
     },
-    status: {
-      type: String,
-      enum: ["wanted", "saving_for", "purchased", "removed"],
-      default: "wanted",
-    },
-    targetDate: {
-      type: Date, // Optional target date to buy
-    },
     notes: {
       type: String,
       maxlength: 300,
-    },
-    purchaseDate: {
-      type: Date, // Set when status changes to 'purchased'
-    },
-    actualPrice: {
-      type: Number, // Actual price paid when purchased
-      min: 0,
     },
   },
   {

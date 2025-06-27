@@ -98,7 +98,7 @@ export const getTransactions = async (req, res) => {
   try {
     const loggedInUserId = req.user._id;
     const userTransactions = await Transaction.find({
-      _id: { $ne: loggedInUserId },
+      userId: { $eq: loggedInUserId },
     });
     res.status(200).json(userTransactions);
   } catch (error) {
