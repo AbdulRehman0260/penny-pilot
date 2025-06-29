@@ -1,3 +1,69 @@
-.hello {
-  font-size: 100px;
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  width: 100%;
+  height: 100vh;
+  background-color: rgb(165, 166, 256,29%);
+  padding: 2rem;
+}
+
+.divider {
+  background: #ccc;
+  border-radius: 4px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  width: 4px;
+}
+
+.box-1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.heading-account {
+  color: #fff;
+  font-size: 40px;
+}
+
+.message-icon {
+  width: 50px;
+  height: 50px;
+  opacity: 50%;
+}
+
+.coin {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 100px;
+  margin-top: 80px;
+  opacity: 50%;
+}
+.title {
+  color: black;
+  font-weight: 800;
+}
+
+.subtitle {
+  max-width: 650px;
+}
+
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  margin: 20px;
+
+}
+
+.text-container {
+  margin-top: 50px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
