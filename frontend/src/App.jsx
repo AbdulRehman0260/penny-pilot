@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "./componenets/Navbar";
 import "./App.css";
 import DashboardPage from "./pages/DashboardPage";
@@ -8,21 +8,51 @@ import SettingsPage from "./pages/SettingsPage";
 import WishListPage from "./pages/WishListPage";
 import TransactionsPage from "./pages/TransactionsPage";
 import GoalsPage from "./pages/GoalsPage";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useAuthStore } from "./store/useAuthStore";
+import { Loader2 } from "lucide-react";
 
 function App() {
+  const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
+
+  useEffect(() => {
+    checkAuth();
+  }, []);
+
+  console.log(authUser);
+
+  if (isCheckingAuth && !authUser) {
+    return (
+      <div className="spinner-container">
+        <Loader2 className="loading-spinner" />
+      </div>
+    );
+  }
+
   return (
     <div>
       <Navbar />
 
       <Routes>
-        <Route path="/" element={<DashboardPage />} />
+        <Route
+          path="/"
+          element={authUser ? <DashboardPage /> : <Navigate to="/login" />}
+        />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/settings" element={<SettingsPage />} />
-        <Route path="/wishlist" element={<WishListPage />} />
-        <Route path="/transactions" element={<TransactionsPage />} />
-        <Route path="/goals" element={<GoalsPage />} />
+        <Route
+          path="/wishlist"
+          element={authUser ? <WishListPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/transactions"
+          element={authUser ? <TransactionsPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/goals"
+          element={authUser ? <GoalsPage /> : <Navigate to="/login" />}
+        />
       </Routes>
     </div>
   );

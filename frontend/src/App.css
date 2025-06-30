@@ -1,14 +1,22 @@
+/* Global CSS */
 
-.grid-container {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Signup Page CSS */
+
+.sgn-grid-container {
   display: grid;
   grid-template-columns: 1fr 2px 1fr;
   width: 100%;
   height: 100vh;
   background-color: rgb(165, 166, 256,29%);
-  padding: 2rem;
 }
 
-.divider {
+.sgn-divider {
   background: #ccc;
   border-radius: 4px;
   margin-top: 2rem;
@@ -16,54 +24,165 @@
   width: 4px;
 }
 
-.box-1{
+.sgn-box-1{
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  gap: 30px;
+  margin-top: 180px;
 }
 
-.heading-account {
+.sgn-heading-account {
   color: #fff;
   font-size: 40px;
 }
 
-.message-icon {
+.sgn-message-icon {
   width: 50px;
   height: 50px;
   opacity: 50%;
 }
 
-.coin {
+.sgn-coin {
   width: 300px;
   height: 300px;
   margin-bottom: 100px;
   margin-top: 80px;
   opacity: 50%;
+  margin-left: 50px;
 }
-.title {
+.sgn-title {
   color: black;
   font-weight: 800;
+  margin-bottom: 20px;
 }
 
-.subtitle {
+.sgn-subtitle {
   max-width: 650px;
 }
 
-.right-box {
+.sgn-right-box {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  margin: 20px;
+  margin : 20px; 
+  margin-top: 130px;
 
 }
 
-.text-container {
+.sgn-text-container {
   margin-top: 50px;
   padding: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
 }
+
+.sgn-form-group {
+  display: flex;
+  flex-direction: column  ;
+  margin-bottom: 20px;
+}
+
+.sgn-left-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+.sgn-create-btn {
+  margin-top: 50px;
+  border: none;
+  background-color: #121212;
+  color: #fff;
+  border-radius: 5px;
+  height: 35px;
+  transition: background-color 0.2s ease;
+  }
+
+.sgn-create-btn:hover {
+  background-color:#4d4d4d;
+  cursor: pointer;
+}
+
+.sgn-name-label {
+  font-size: 12px;
+  font-weight: 500;
+  padding-left: 5px;
+  margin-bottom: 2px;
+}
+
+input {
+  border-radius: 5px;
+  border-color: #fff;
+  border: none;
+  box-shadow: none;
+  height: 25px;
+  padding-left: 5px;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.sgn-input-form-box {
+  display: flex;
+  flex-direction: column;
+  margin-top: 150px;
+  width: 700px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.loading-spinner {
+  animation: spin 1s linear infinite;
+  width: 64px;
+    height: 64px;
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 768px) {
+  .sgn-grid-container{
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .sgn-right-box {
+    display: none;
+  }
+
+    .sgn-input-form-box {
+      display: flex;
+      flex-direction: column;
+      margin-top: 200px;
+      width: 400px;
+      margin-left: 10px;
+      margin-right: 10px; }
+
+  .sgn-left-box {
+      width: 90%;
+      /* Limit max width for better UX */
+      margin: 0 auto;
+      /* Center the form */
+      padding: 20px;
+    }
+
+
+}
+/* Dashboard CSS */
