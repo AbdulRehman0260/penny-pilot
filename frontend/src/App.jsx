@@ -11,13 +11,14 @@ import GoalsPage from "./pages/GoalsPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { useAuthStore } from "./store/useAuthStore";
 import { Loader2 } from "lucide-react";
+import toast, { Toaster } from "react-hot-toast";
 
 function App() {
   const { authUser, checkAuth, isCheckingAuth } = useAuthStore();
 
   useEffect(() => {
     checkAuth();
-  }, []);
+  }, [checkAuth]);
 
   console.log(authUser);
 
@@ -60,6 +61,7 @@ function App() {
           element={authUser ? <GoalsPage /> : <Navigate to="/login" />}
         />
       </Routes>
+      <Toaster />
     </div>
   );
 }

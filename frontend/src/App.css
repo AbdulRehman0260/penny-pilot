@@ -133,6 +133,13 @@ input:focus {
   box-shadow: none;
 }
 
+input::placeholder {
+  color: #999;
+  /* Light gray */
+  opacity: 50%;
+  /* Ensures consistent opacity across browsers */
+}
+
 .sgn-input-form-box {
   display: flex;
   flex-direction: column;
