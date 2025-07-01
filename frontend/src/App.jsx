@@ -38,8 +38,14 @@ function App() {
           path="/"
           element={authUser ? <DashboardPage /> : <Navigate to="/login" />}
         />
-        <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route
+          path="/signup"
+          element={!authUser ? <SignUpPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/login"
+          element={!authUser ? <LoginPage /> : <Navigate to="/" />}
+        />
         <Route path="/settings" element={<SettingsPage />} />
         <Route
           path="/wishlist"
