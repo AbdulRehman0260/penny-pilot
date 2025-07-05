@@ -11,6 +11,81 @@ body {
   height: 100%;
 }
 
+/* goal card css */
+
+.add-goal-form-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.form-btn-container{
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.form-create-btn{
+padding: 10px;
+border-radius: 10px;
+border: none;
+background-color: #3f3d56;
+color: #fff
+}
+
+.form-create-btn:hover{
+  cursor: pointer;
+  background-color: #999;
+}
+
+.overlay{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.pop-card{
+  background: white;
+    width: 300px;
+    max-width: 90%;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: popin 0.3s ease;
+}
+
+.pop-card input {
+width: 100%;
+padding: 0.6rem;
+margin-bottom: 1rem;
+border:1px solid #ccc;
+border-radius: 6px;
+
+}
+
+.pop-card textarea {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px; }
+
+.dash-page-container{
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: 1fr 7fr 1fr;
+}
+
+
 /* NavBar CSS */
 
 .navbar-container {
@@ -34,6 +109,65 @@ body {
 .navbar-btn:hover {
   background-color: lightgray;
 }
+ /* SideBar CSS */
+
+.sidebar-container {
+  height: 100vh;
+  width: 100px;
+  border-color:#d8d7e0;
+  border-width: 2px;
+  border-top: 0px;
+  border-bottom: 0px;
+  border-style: solid;
+
+}
+
+.goal-btn-container{
+  height: 10vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.add-goal-form-input{
+  display: flex;
+  flex-direction: column;
+}
+
+.add-goal-form-input label {
+  font-size: 12px;
+}
+
+.add-goal-btn{
+  border: none;
+  transition: background-color 0.5s ease;
+  padding-top: 2px;
+  background-color: transparent;
+  color: black ;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.add-goal-btn:hover {
+  cursor: pointer;
+}
+
+.form-btn-container{
+  margin-top: 20px;
+}
+
+.sidebar-btn{
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 14px;
+}
+
+.sidebar-btn:hover {
+    cursor: pointer; 
+  }
+
 
 /* Signup Page CSS */
 
@@ -51,6 +185,7 @@ body {
   align-items: center;
   gap: 30px;
   margin-bottom: 40px;
+  text-align: center;
 }
 
 .sgn-heading-account {
@@ -83,14 +218,13 @@ body {
 
 .sgn-right-box {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 2rem;
-  min-height: 100vh;
-  box-sizing: border-box;
-  gap: 100px;
-  padding-top: 150px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    /* vertical center */
+    padding: 2rem;
+    min-height: 100vh;
 }
 
 .sgn-text-container {

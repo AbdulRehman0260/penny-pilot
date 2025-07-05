@@ -20,6 +20,7 @@ const goalSchema = new mongoose.Schema(
     targetAmount: {
       type: Number,
       required: true,
+      default: 0,
       min: 0,
     },
     currentAmount: {
@@ -33,7 +34,7 @@ const goalSchema = new mongoose.Schema(
     },
     priority: {
       type: String,
-      enum: ["low", "medium", "high"],
+      enum: ["Low", "Medium", "High"],
       default: "medium",
     },
   },
